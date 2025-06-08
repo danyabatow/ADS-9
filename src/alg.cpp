@@ -22,7 +22,7 @@ PMTree::PMTree(const std::vector<char>& elements) {
 
 PMTree::~PMTree() { freeTree(root); }
 
-void PMTree::buildTree(PMNode* node, std::vector<char>& elements) {
+void PMTree::buildTree(PMNode* node, const std::vector<char>& elements) {
   if (elements.empty()) return;
 
   for (char el : elements) {
