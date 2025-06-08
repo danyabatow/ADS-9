@@ -15,7 +15,7 @@ int factorial(int n) {
   return res;
 }
 
-PMTree::PMTree(std::vector<char>& elements) {
+PMTree::PMTree(const std::vector<char>& elements) {
   root = new PMNode('\0');
   buildTree(root, elements);
 }
