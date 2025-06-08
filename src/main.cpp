@@ -9,7 +9,7 @@
 int main() {
   const std::vector<char> inputData = {'1', '2', '3', '4', '5'};
   PMTree permutationTree(
-      const_cast<std::vector<char>&>(inputData));  // если конструктор не const
+      const_cast<std::vector<char>&>(inputData));
 
   auto timeStart = std::chrono::high_resolution_clock::now();
   auto allPermutations = getAllPerms(permutationTree);
