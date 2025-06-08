@@ -9,7 +9,7 @@ class PMTree {
   struct PMNode {
     char key;
     std::vector<PMNode*> children;
-    PMNode(char k) : key(k) {}
+    explicit PMNode(char k) : key(k) {}
   };
 
  private:
