@@ -15,7 +15,7 @@ class PMTree {
  private:
   PMNode* root;
 
-  void buildTree(PMNode* node, std::vector<char>& elements);
+  void buildTree(PMNode* node, const std::vector<char>& elements);
   void freeTree(PMNode* node);
 
  public:
