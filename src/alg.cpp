@@ -5,6 +5,7 @@
 #include  <cstdlib>
 #include  <algorithm>
 #include  <stdexcept>
+#include  <vector>
 #include  "tree.h"
 
 int factorial(int n) {
@@ -62,7 +63,7 @@ std::vector<std::vector<char>> getAllPerms(PMTree& tree) {
 
 std::vector<char> getPerm1(PMTree& tree, int num) {
   auto perms = getAllPerms(tree);
-  if (num < 1 || num > (int)perms.size()) return {};
+  if (num < 1 || num > static_cast<int>(perms.size())) return {};
   return perms[num - 1];
 }
 
@@ -71,7 +72,7 @@ std::vector<char> getPerm2(PMTree& tree, int num) {
   PMTree::PMNode* current = tree.getRoot();
   std::vector<PMTree::PMNode*> nodes = current->children;
 
-  int n = (int)nodes.size();
+  int n = static_cast<int>(nodes.size());
   int totalPerms = factorial(n);
 
   if (num < 1 || num > totalPerms) return {};
@@ -79,7 +80,7 @@ std::vector<char> getPerm2(PMTree& tree, int num) {
   --num;
 
   while (!nodes.empty()) {
-    int blockSize = totalPerms / (int)nodes.size();
+    int blockSize = totalPerms / static_cast<int>(nodes.size());
     int index = num / blockSize;
     result.push_back(nodes[index]->key);
     nodes.erase(nodes.begin() + index);
