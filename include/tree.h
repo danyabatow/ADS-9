@@ -19,7 +19,7 @@ class PMTree {
   void freeTree(PMNode* node);
 
  public:
-  explicit PMTree(std::vector<char>& elements);
+  explicit PMTree(const std::vector<char>& elements);
   ~PMTree();
   PMNode* getRoot() const { return root; }
 };
